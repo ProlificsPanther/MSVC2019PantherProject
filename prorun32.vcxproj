@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{025CD196-27F9-4512-BE73-45A7C72E6163}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\</OutDir>
+    <IntDir>.\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(SMBASE)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SM_RW=1;SM_JAVA=1;DBI=2;SM_WEB;SM_PI;MENUS=1;DOSMSW32_MSC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\prorun32.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\prorun32.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(SMBASE)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\prorun32.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <OutputFile>.\prorun32.exe</OutputFile>
+      <AdditionalDependencies>$(SMBASE)\lib\librww32.lib;$(SMBASE)\lib\libtmw32.lib;$(SMBASE)\lib\libdmw32.lib;$(SMBASE)\lib\jdbdm32.lib;$(SMBASE)\lib\lwebdv32.lib;$(SMBASE)\lib\libmw32.lib;$(SMBASE)\lib\libpiw32.lib;$(SMBASE)\lib\libsmw32.lib;$(SMBASE)\lib\cktbl32.lib;$(SMBASE)\lib\libsti32.lib;$(SMBASE)\lib\libjpeg.lib;$(SMBASE)\jdb\lib\jdbw32.lib;$(SMBASE)\jdb\lib\jdbfmw32.lib;oleacc.lib;shlwapi.lib;gdiplus.lib;imm32.lib;msimg32.lib;msxml2.lib;oledlg.lib;winmm.lib;windowscodecs.lib;kernel32.lib;gdi32.lib;comdlg32.lib;user32.lib;comctl32.lib;shell32.lib;wsock32.lib;oldnames.lib;ole32.lib;oleaut32.lib;uuid.lib;advapi32.lib;winspool.lib;libvcruntime.lib;libucrt.lib;legacy_stdio_definitions.lib;legacy_stdio_wide_specifiers.lib;libcmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /SUBSYSTEM:windows,5.01 /INCREMENTAL:no /MACHINE:I386 /NODEFAULTLIB</AdditionalOptions>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dbiinit.c" />
+    <ClCompile Include="funclist.c" />
+    <ClCompile Include="jmain.c" />
+	<ClCompile Include="piinit.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="prohelp.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="prolific.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="prorun.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
