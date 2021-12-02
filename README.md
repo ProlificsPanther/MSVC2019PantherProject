@@ -12,6 +12,9 @@ Project file to rebuild Panther development application 32 bit.
 # prorun32.vcxproj
 Project file to rebuild Panther runtime application 32 bit.
 
+# How to rebuild application
+Please watch the video tutorial below.
+
 # Videos & Download
 
 [Click here](https://youtu.be/2WHpp5x-P1c) for video tutorial
