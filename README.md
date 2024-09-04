@@ -1,18 +1,18 @@
 # MSVC2019PantherProject
 
-### MSVC 2019 Projects to build  Panther Development & Runtime Applications.
+MSVC 2019 Projects to build  Panther Development & Runtime Applications.
 
-# This repository consists of the following files
+## This repository consists of the following files:
   * prodev32.vcxproj
   * prorun32.vcxproj
 
-# prodev32.vcxproj
+## prodev32.vcxproj
 Project file to rebuild Panther development application 32 bit.
 
-# prorun32.vcxproj
+## prorun32.vcxproj
 Project file to rebuild Panther runtime application 32 bit.
 
-# How to rebuild application
+## How to rebuild application
 Please watch the video tutorial below.
 
 # Videos & Download
